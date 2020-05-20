@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid class="deepgreen">
+  <v-container fluid class="deepgreen py-12 mt-12">
     <v-card flat class="transparent mx-auto" max-width="600">
       <v-card-text class="text-center" width="100%">
         <h2>{{ greenSection.header }}</h2>

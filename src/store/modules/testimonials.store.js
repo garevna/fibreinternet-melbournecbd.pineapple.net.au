@@ -125,12 +125,8 @@ const mutations = {
 const actions = {
   async GET_CONTENT ({ getters, commit }) {
     // const content = await (await fetch(getters.db)).json()
-    console.log(location.origin, location.path)
-    console.log(state.testimonials)
     const path = `${location.origin}${location.path ? location.path : '/'}img/testimonials/`
-    console.log(path)
     commit('UPDATE_CONTENT', state.testimonials.map(item => Object.assign(item, { photo: `${path}${item.photo}` })))
-    console.log(state.testimonials)
     // return content
   }
 }

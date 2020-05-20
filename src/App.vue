@@ -1,14 +1,14 @@
 <template>
   <v-app class="homefone">
-    <v-container fluid class="homefone" v-if="ready">
+    <v-container fluid class="homefone" v-if="ready" style="overflow-x: hidden">
       <AppHeader :pages="pages" :page.sync="page" />
-      <v-sheet
+      <!-- <v-sheet
         width="100%"
         max-width="1440"
         color="homefone"
         tile
         class="mx-auto"
-      >
+      > -->
         <section id="top" style="width: 100%">
           <div class="base-title">
             <a href="#top" class="core-goto"></a>
@@ -16,17 +16,33 @@
           </div>
         </section>
 
-      </v-sheet>
+      <!-- </v-sheet> -->
 
-      <!-- ============================= HOW TO CONNECT ============================= -->
-      <v-row width="100%">
-        <HowToConnect :page.sync="page" />
-      </v-row>
+      <!-- ============================= LIST ============================= -->
+
+      <section id="list" style="width: 100%">
+        <div class="base-title">
+          <a href="#list" class="core-goto"></a>
+          <List :page.sync="page" />
+        </div>
+      </section>
 
       <!-- ============================= CREEN SECTION ============================= -->
-      <v-row width="100%">
-        <GreenSection />
-      </v-row>
+      <section id="dgtek" style="width: 100%">
+        <div class="base-title">
+          <a href="#dgtek" class="core-goto"></a>
+          <GreenSection />
+        </div>
+      </section>
+
+      <!-- ============================= HOW TO CONNECT ============================= -->
+
+      <section id="how-to-connect" style="width: 100%">
+        <div class="base-title">
+          <a href="#how-to-connect" class="core-goto"></a>
+          <HowToConnect :page.sync="page" />
+        </div>
+      </section>
 
       <!-- ============================= TESTIMONIALS ============================= -->
 
@@ -36,45 +52,6 @@
           <Testimonials :page.sync="page"/>
         </div>
       </section>
-
-      <!-- ============================= USER CONTACT ============================= -->
-
-      <!-- <v-sheet
-          width="100%"
-          max-width="1440"
-          color="homefone"
-          tile
-          class="mx-auto"
-      >
-        <v-row align="center" class="mx-0 px-0">
-          <v-col cols="12" md="6" class="aside-col">
-            <section id="benefits" style="width: 100%">
-              <div class="base-title">
-                <a href="#benefits" class="core-goto"></a>
-                <Aside />
-              </div>
-            </section>
-          </v-col>
-          <v-col cols="12" md="6" class="mx-0 px-0">
-            <v-row align="center" justify="center" class="pa-0 my-12">
-              <section id="contact" style="width: 100%">
-                <div class="base-title">
-                  <a href="#contact" class="core-goto"></a>
-                  <v-card flat class="transparent mx-0">
-                      <v-card
-                            flat
-                            class="user-contact transparent mx-auto pa-0"
-                            style="margin-bottom: 80px"
-                      >
-                        <UserContact />
-                      </v-card>
-                    </v-card>
-                  </div>
-                </section>
-              </v-row>
-          </v-col>
-        </v-row>
-      </v-sheet> -->
 
       <!-- ============================= INTERNET PLANS ============================= -->
       <v-row width="100%" justify="center">
@@ -249,6 +226,7 @@ import { mapState, mapActions } from 'vuex'
 
 import AppHeader from '@/components/AppHeader.vue'
 import Top from '@/components/Top.vue'
+import List from '@/components/List.vue'
 // import Aside from '@/components/Aside.vue'
 // import UserContact from '@/components/UserContact.vue'
 import HowToConnect from '@/components/HowToConnect.vue'
@@ -263,6 +241,7 @@ export default {
   components: {
     AppHeader,
     Top,
+    List,
     // Aside,
     // UserContact,
     HowToConnect,
@@ -334,7 +313,7 @@ export default {
         })
         this.$store.commit('contact/UPDATE_EMAIL_SUBJECT', this.$store.state.content.emailSubject)
         this.$store.commit('contact/UPDATE_EMAIL_TEXT', this.$store.state.content.emailText)
-        this.$store.commit('contact/SET_FIELDS_TO_SHOW', this.$store.state.content.userForm.fieldsToShow)
+        // this.$store.commit('contact/SET_FIELDS_TO_SHOW', this.$store.state.content.userForm.fieldsToShow)
       })
     this.getTestimonials()
   },

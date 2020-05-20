@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid class="homefone mb-12 pb-12">
+  <v-container fluid class="homefone my-12 py-12">
 
     <v-card flat class="transparent mx-auto mt-12 mb-0 text-center" max-width="1360">
       <v-card-title class="text-center" max-width="940">
@@ -78,7 +78,7 @@
           min-width="240"
           height="48"
           class="submit-button px-auto mx-auto"
-          @click="$emit('update:page', '#contact')"
+          @click="$emit('update:page', testimonials.goto)"
       >
           {{ content.button }}
       </v-btn>

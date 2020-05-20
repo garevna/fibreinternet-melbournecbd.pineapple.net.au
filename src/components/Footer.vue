@@ -200,7 +200,7 @@ export default {
     },
     submit () {
       if (!this.name || !this.phone || !emailValidator.validate(this.email)) {
-        this.$emit('update:page', '#contact')
+        this.$emit('update:page', '#footer')
         return
       }
       this.popupOpened = true
@@ -211,6 +211,7 @@ export default {
           <p>${this.emailText}</p>
           <hr>
           <h3>Name: ${this.name}</h3>
+          <h4>Email: ${this.email}</h4>
           <h4>Phone: ${this.phone}</h4>
           <hr>
           <p><small>Get started!</small></p>

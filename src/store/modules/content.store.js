@@ -6,7 +6,7 @@ const state = {
   emailSubject: 'Ultra-Fast Fibre To Your Home',
   emailText: 'Thank you for your interest in Pineapple NET! A member of our team will be in touch shortly.',
   mainNavButtons: ['Why Fibre?', 'DGtek', 'How to connect', 'Pricing Plans', 'Testimonials', 'Contact Us'],
-  mainNavSectors: ['#fibre', '#dgtek', '#howtoconnect', '#plans', '#testimonials', '#footer'],
+  mainNavSectors: ['#faq', '#dgtek', '#how-to-connect', '#plans', '#testimonials', '#footer'],
   top: {
     header: 'Get Ultra-Fast Fibre To Your Home',
     text: 'Pineapple Net’s full-fibre is the internet Melbourne’s been missing. Faster, cheaper and more reliable than your NBN. Now that it’s reached your building, connect and get your first month for FREE. Offer available in Melbourne’s CBD highrise apartments: The Aurora, Conversatory and QV1.',
@@ -18,33 +18,8 @@ const state = {
     header: 'Powered By DGtek',
     text: 'DGtek is an infrastructure provider running fibre optics down Melbourne’s streets. We retail their world-class FTTP network, and that’s how our residential speeds are faster and cheaper than all our competitors.'
   },
-  info: {
-    header: 'Ultra-Fast Fibre To Your Home',
-    text: 'Nothing beats fibre. Get the best internet connection for HD movies and 4K streams, remote-work and crystal clear video calls. Unwind with lag-free-games, and accelerated web-surfing. Now, you can feel good about your internet connection thanks to our superior-tech and the unrivalled reliability of ultra-fast fibre. ',
-    offer: [
-      {
-        blackText: 'Up to 1Gbps',
-        greenText: 'Speeds'
-      },
-      {
-        blackText: 'Business-worthy uploads',
-        greenText: 'Uploads'
-      },
-      {
-        blackText: 'for every screen',
-        greenText: 'Bandwidth'
-      }
-    ]
-  },
   plans: {
     header: 'We Told You It Was Cheap'
-  },
-  userForm: {
-    title: 'Ask Questions Or Get Connected Today',
-    messagePlaceholder: 'Enquiry*',
-    button: 'Ask Questions Or Get Connected',
-    fieldsToShow: ['name', 'email', 'phone', 'building', 'apptNumber', 'promocode', 'message']
-    // fieldsToShow: ['name', 'email', 'address', 'postcode', 'state', 'phone', 'building', 'apptNumber', 'promocode', 'message']
   },
   list: {
     header: 'Fibre Is The Superior Internet Technology',
@@ -54,14 +29,17 @@ const state = {
     items: [
       {
         title: 'Lightspeed',
+        icon: 'https://garevna.github.io/connect-melbournecbd.pineapple.com.au/android-chrome-192x192.png',
         text: 'Fast in both directions. For downloads, we are 10-20x faster than an NBN connection. For uploads, there is no competition - up to 25x faster than the NBN’s fastest.'
       },
       {
         title: 'Bulletproof',
+        icon: 'https://garevna.github.io/connect-melbournecbd.pineapple.com.au/android-chrome-192x192.png',
         text: 'Fibre is reliable. It won’t let you down when you’re in a Zoom meeting with colleagues or a FaceTime with the family. Our 99.9% network uptime is without equal. That’s years without a single outage.'
       },
       {
         title: 'Affordable',
+        icon: 'https://garevna.github.io/connect-melbournecbd.pineapple.com.au/android-chrome-192x192.png',
         text: 'Fibre from $50 helps you tighten the belt without feeling the pinch. Not only does our superior fibre outperform the NBN,  for comparable speeds, but it is also cheaper. And for our gigabit speeds, it’s still a great deal.'
       }
     ]

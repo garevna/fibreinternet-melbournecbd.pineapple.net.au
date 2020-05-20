@@ -1,45 +1,58 @@
 <template>
-    <v-container fluid class="homefone">
-        <v-card flat class="transparent text-center mx-auto" width="100%">
+  <v-container fluid class="homefone my-12">
+    <v-card flat class="transparent text-center mx-auto" width="100%">
+      <v-card-title>
+        <h2>{{ howToConnect.header }}</h2>
+      </v-card-title>
+      <v-card-text>
+        <p>{{ howToConnect.text }}</p>
+      </v-card-text>
+    </v-card>
+
+    <v-container fluid class="mt-5 mb-12">
+      <v-card flat class="d-flex flex-wrap justify-center transparent">
+        <v-card flat class="card--offer transparent text-center mx-1 mx-sm-10" width="240">
+          <ContactUs :contact.sync="contact" />
           <v-card-title>
-            <h2>{{ howToConnect.header }}</h2>
+            <h3>{{ howToConnect.items[0].title }}</h3>
           </v-card-title>
-          <v-card-text>
-            <p>{{ howToConnect.text }}</p>
+          <v-card-text max-width="600" class="mx-auto">
+            <p>{{ howToConnect.items[0].text }}</p>
           </v-card-text>
         </v-card>
-
-        <v-container fluid class="mt-5 mb-12">
-          <v-card flat class="d-flex flex-wrap justify-center transparent">
-            <v-card flat class="card--offer transparent text-center mx-1 mx-sm-10" width="240">
-              <ContactUs :contact.sync="contact" />
-              <v-card-title>
-                <h3>{{ howToConnect.items[0].title }}</h3>
-              </v-card-title>
-              <v-card-text max-width="600" class="mx-auto">
-                <p>{{ howToConnect.items[0].text }}</p>
-              </v-card-text>
-            </v-card>
-            <v-card flat class="card--offer transparent text-center mx-1 mx-sm-10" width="240">
-              <GetConnected :contact.sync="contact" />
-              <v-card-title>
-                <h3>{{ howToConnect.items[1].title }}</h3>
-              </v-card-title>
-              <v-card-text>
-                <p>{{ howToConnect.items[1].text }}</p>
-              </v-card-text>
-            </v-card>
-            <v-card flat class="card--offer transparent text-center mx-1 mx-sm-10" width="240">
-              <Enjoy :contact.sync="contact" />
-              <v-card-title with="100%">
-                <h3>{{ howToConnect.items[2].title }}</h3>
-              </v-card-title>
-              <v-card-text>
-                <p>{{ howToConnect.items[2].text }}</p>
-              </v-card-text>
-            </v-card>
-          </v-card>
+        <v-card flat class="card--offer transparent text-center mx-1 mx-sm-10" width="240">
+          <GetConnected :contact.sync="contact" />
+          <v-card-title>
+            <h3>{{ howToConnect.items[1].title }}</h3>
+          </v-card-title>
+          <v-card-text>
+            <p>{{ howToConnect.items[1].text }}</p>
+          </v-card-text>
+        </v-card>
+        <v-card flat class="card--offer transparent text-center mx-1 mx-sm-10" width="240">
+          <Enjoy :contact.sync="contact" />
+          <v-card-title with="100%">
+            <h3>{{ howToConnect.items[2].title }}</h3>
+          </v-card-title>
+          <v-card-text>
+            <p>{{ howToConnect.items[2].text }}</p>
+          </v-card-text>
+        </v-card>
+      </v-card>
     </v-container>
+    <v-card flat class="transparent mx-auto text-center" width="600" min-width="300">
+      <v-btn
+          color="buttons"
+          dark
+          rounded
+          height="48"
+          width="420"
+          class="submit-button px-auto mx-auto"
+          @click="$emit('update:page', howToConnect.goto)"
+      >
+          {{ howToConnect.button }}
+      </v-btn>
+    </v-card>
   </v-container>
 </template>
 

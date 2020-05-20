@@ -1,8 +1,8 @@
-# pineapple-land-2
+# fibreinternet-melbournecbd.pineapple.com.au
 
 ###### Landing page for pineapple.net.au
 
-[**demo**](https://garevna.github.io/pineapple-land-2)
+[**demo**](https://garevna.github.io/fibreinternet-melbournecbd.pineapple.com.au)
 
 ### Project setup
 ```
