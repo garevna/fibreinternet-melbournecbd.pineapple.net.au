@@ -76,9 +76,10 @@
           dark
           rounded
           min-width="240"
+          max-width="480"
           height="48"
           class="submit-button px-auto mx-auto"
-          @click="$emit('update:page', testimonials.goto)"
+          @click="$emit('update:page', content.goto)"
       >
           {{ content.button }}
       </v-btn>

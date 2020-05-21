@@ -53,6 +53,7 @@
                         :item="item"
                         :index="index"
                         :contact.sync="contact"
+                        :selected.sync="selected"
               />
               </v-row>
             </v-sheet>
@@ -60,17 +61,30 @@
         </v-carousel>
       </v-card>
     </v-slide-x-transition>
+    <v-card-actions class="text-center my-4 mb-md-8">
+      <v-btn
+          color="buttons"
+          dark
+          rounded
+          width="240"
+          height="48"
+          class="submit-button px-auto mx-auto"
+          @click="$emit('update:page', '#footer')"
+      >
+        Contact Us
+      </v-btn>
+    </v-card-actions>
   </v-card>
 </template>
 
 <style>
-.v-btn.v-btn--icon {
+/* .v-btn.v-btn--icon {
   background: #94C578!important;
 }
 .v-window__prev .v-btn:hover,
 .v-window__next .v-btn:hover {
   background: #20731C!important;
-}
+} */
 </style>
 
 <script>
@@ -89,7 +103,8 @@ export default {
   props: ['page'],
   data () {
     return {
-      contact: false
+      contact: false,
+      selected: null
     }
   },
   computed: {
@@ -98,13 +113,6 @@ export default {
     ...mapState('content', ['internetPlans']),
     carouselHeight () {
       return this.viewportWidth < 960 ? this.viewportWidth < 600 ? 420 : 480 : 420
-    }
-  },
-  watch: {
-    contact (val) {
-      if (!val) return
-      this.$emit('update:page', 'contact')
-      this.contact = false
     }
   }
 }

@@ -12,7 +12,7 @@
       <p>Unlimited Data</p>
     </v-card-text>
 
-    <v-card-actions class="text-center my-4 mb-md-8">
+    <!-- <v-card-actions class="text-center my-4 mb-md-8">
       <v-btn
           color="buttons"
           dark
@@ -24,7 +24,7 @@
       >
         Contact Us
       </v-btn>
-    </v-card-actions>
+    </v-card-actions> -->
   </v-card>
 </template>
 
@@ -34,7 +34,7 @@
   padding: 30px 20px;
   margin: 40px 20px;
   width: 280px;
-  height: 380px;
+  height: 320px;
 }
 
 .price-card-with-border {

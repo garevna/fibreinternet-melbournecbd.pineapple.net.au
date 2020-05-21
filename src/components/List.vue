@@ -8,10 +8,10 @@
               width="480"
         >
           <v-card-title>
-            <h2 class="text-left">{{ list.header }}</h2>
+            <h2 class="text-center text-md-left">{{ list.header }}</h2>
           </v-card-title>
           <v-card-text>
-            <p class="text-left">
+            <p class="text-center text-md-left">
                 {{ list.text }}
             </p>
           </v-card-text>

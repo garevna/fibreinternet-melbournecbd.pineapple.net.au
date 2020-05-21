@@ -2,84 +2,44 @@
   <v-container fluid fill-height class="homefone" style="position: relative; margin-bottom: -10px; margin-top: 50px;">
     <FooterFone :footerHeight="footerHeight" />
     <v-container fluid class="footer--top-content" :style="{ top: topContentTop }">
-      <v-row align="start" justify="center" style="position: absolute; top: 0; left: 0; width: 100%">
+      <v-row align="start" justify="center" style="top: 0; width: 100%; max-width: 1200px" class="mx-auto">
         <v-card-title>
-          <h2 class="white-text centered">{{ footer.topHead }}</h2>
+          <h2 class="white-text centered">{{ footer.title }}</h2>
         </v-card-title>
         <v-card-text max-width="100%">
           <h5 class="white-text centered">
-              {{ footer.topText }}
+              {{ footer.text }}
           </h5>
         </v-card-text>
-        <v-row class="mx-auto">
-          <v-col cols="12" class="mx-auto">
-            <v-row align="center" justify="center">
-              <v-card flat class="transparent mx-1 my-1" v-if="viewportWidth > 420">
-                <v-text-field
-                      height="53"
-                      class="input-field rounded transparent"
-                      label="Name"
-                      hide-details
-                      rounded
-                      outlined
-                      dark
-                      color="#fff"
-                      v-model="name"
-                      :rules="[rules.required]"
-                ></v-text-field>
-              </v-card>
-              <v-card flat class="transparent mx-1 my-1" v-if="viewportWidth > 420">
-                <v-text-field
-                      height="53"
-                      class="input-field rounded transparent"
-                      label="Email"
-                      hide-details
-                      rounded
-                      outlined
-                      dark
-                      color="#fff"
-                      v-model="email"
-                      :rules="[rules.required, rules.email]"
-                ></v-text-field>
-              </v-card>
-              <v-card flat class="transparent mx-1 my-1" v-if="viewportWidth > 420">
-                <v-text-field
-                      height="53"
-                      class="input-field rounded transparent"
-                      label="Phone"
-                      hide-details
-                      rounded
-                      outlined
-                      dark
-                      color="#fff"
-                      v-model="phone"
-                      style="font-size: 16px"
-                      background-color="transparent"
-                ></v-text-field>
-              </v-card>
-              <v-card flat class="transparent mx-1 my-0">
-                <v-btn
+        <v-row align="center" justify="center" style="max-width: 1200px" class="mx-auto my-0">
+
+          <InputElement label="Name" :value.sync="name" :rules="[rules.required]" />
+          <InputElement label="Email" :value.sync="email" :rules="[rules.required, rules.email]" />
+          <InputElement label="Phone" :value.sync="phone" :rules="[rules.phone]" />
+
+          <v-col cols="12" sm="4" md="3" class="mx-auto my-0 text-center">
+            <v-card flat class="transparent mx-auto my-0 py-0 text-center">
+              <v-btn
                     height="53"
                     max-width="280"
                     min-width="280"
-                    label="Phone"
                     dense
                     hide-details
                     rounded
                     light
                     @click="submit"
                     style="color: #20731C"
-                >Get started</v-btn>
-              </v-card>
-            </v-row>
+                    class="mx-auto"
+              >{{ footer.button }}</v-btn>
+            </v-card>
           </v-col>
         </v-row>
       </v-row>
     </v-container>
-
     <FooterBottomContent v-if="viewportWidth >= 770" />
-    <FooterBottomContentSmall  v-if="viewportWidth < 770" class="footer--bottom-content-small"/>
+    <!-- <FooterBottomContentSmall  v-if="viewportWidth < 770" class="footer--bottom-content-small"/> -->
     <Popup :opened.sync="popupOpened" />
+    <PopupError :opened.sync="popupErrorOpened" />
   </v-container>
 </template>
 
@@ -98,10 +58,6 @@
 
 .title {
   margin-top: 198px;
-}
-
-.rounded {
-  border-radius: 40px!important;
 }
 
 .white-text {
@@ -138,10 +94,6 @@
   color: #E5FDD7;
 }
 
-.input-field {
-  width: 280px;
-}
-
 </style>
 
 <script>
@@ -150,9 +102,11 @@ import { mapState, mapActions } from 'vuex'
 
 import FooterFone from '@/components/footer/FooterFone.vue'
 import FooterBottomContent from '@/components/footer/BottomContent.vue'
-import FooterBottomContentSmall from '@/components/footer/BottomContentSmall.vue'
+import InputElement from '@/components/footer/InputElement.vue'
+// import FooterBottomContentSmall from '@/components/footer/BottomContentSmall.vue'
 
 import Popup from '@/components/contact/Popup.vue'
+import PopupError from '@/components/contact/PopupError.vue'
 
 const emailValidator = require('email-validator')
 
@@ -160,9 +114,11 @@ export default {
   name: 'Footer',
   components: {
     FooterFone,
-    FooterBottomContentSmall,
+    // FooterBottomContentSmall,
     FooterBottomContent,
-    Popup
+    InputElement,
+    Popup,
+    PopupError
   },
   props: ['user', 'page'],
   data () {
@@ -173,9 +129,11 @@ export default {
       send: false,
       rules: {
         required: value => !!value || 'Required',
-        email: () => emailValidator.validate(this.email) ? true : 'Invalid email'
+        email: () => emailValidator.validate(this.email) ? true : 'Invalid email',
+        phone: value => value.match(/^[0-9]*$/gm) ? true : 'Invalid phone number'
       },
-      popupOpened: false
+      popupOpened: false,
+      popupErrorOpened: false
     }
   },
   computed: {
@@ -199,8 +157,8 @@ export default {
       this.phone = ''
     },
     submit () {
-      if (!this.name || !this.phone || !emailValidator.validate(this.email)) {
-        this.$emit('update:page', '#footer')
+      if (!this.name || !this.phone.match(/^[0-9]*$/gm) || !emailValidator.validate(this.email)) {
+        this.popupErrorOpened = true
         return
       }
       this.popupOpened = true
@@ -214,7 +172,7 @@ export default {
           <h4>Email: ${this.email}</h4>
           <h4>Phone: ${this.phone}</h4>
           <hr>
-          <p><small>Get started!</small></p>
+          <p>Get promo code!</p>
         `
       })
       this.initFields()

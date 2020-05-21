@@ -120,8 +120,9 @@ const state = {
     ]
   },
   footer: {
-    topHead: 'READY TO GET STARTED?',
-    topText: "Leave your inquiry and we'll get back to you within 24 hours on business days"
+    title: 'READY TO GET STARTED?',
+    text: "Leave your inquiry and we'll get back to you within 24 hours on business days",
+    button: 'Get promo code'
   }
 }
 
