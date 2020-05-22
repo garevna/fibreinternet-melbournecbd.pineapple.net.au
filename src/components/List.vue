@@ -1,6 +1,6 @@
 <template>
   <v-container style="max-width:1440px" class="mx-auto">
-    <v-row align="center" justify="space-around">
+    <v-row align="center" justify="center">
       <v-col cols="12" md="6">
         <v-card
               flat
@@ -17,10 +17,7 @@
           </v-card-text>
           <v-card-text>
             <v-btn
-                color="buttons"
                 dark
-                rounded
-                height="48"
                 class="submit-button px-auto mx-auto"
                 @click="$emit('update:page', list.goto)"
             >
@@ -36,6 +33,7 @@
             class="transparent"
             v-for="(item, index) in list.items"
             :key="index"
+            style="max-width: 540px;"
         >
           <!-- <v-card flat class="transparent"> -->
             <v-col cols="2">

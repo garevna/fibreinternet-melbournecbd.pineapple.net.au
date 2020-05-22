@@ -63,11 +63,7 @@
     </v-slide-x-transition>
     <v-card-actions class="text-center my-4 mb-md-8">
       <v-btn
-          color="buttons"
           dark
-          rounded
-          width="240"
-          height="48"
           class="submit-button px-auto mx-auto"
           @click="$emit('update:page', '#footer')"
       >

@@ -42,11 +42,7 @@
     </v-container>
     <v-card flat class="transparent mx-auto text-center" width="600" min-width="300">
       <v-btn
-          color="buttons"
           dark
-          rounded
-          height="48"
-          width="420"
           class="submit-button px-auto mx-auto"
           @click="$emit('update:page', howToConnect.goto)"
       >

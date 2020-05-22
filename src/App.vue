@@ -168,7 +168,8 @@ svg.defs-only {
   min-width: 240px!important;
   max-width: 420px!important;
   height: 48px!important;
-  color: #72BF44;
+  background-color: #72BF44!important;
+  color: #fff!important;
   border-radius: 48px!important;
 }
 

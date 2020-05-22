@@ -8,7 +8,7 @@ const state = {
   mainNavButtons: ['Why Fibre?', 'DGtek', 'How to connect', 'Pricing Plans', 'Testimonials', 'Contact Us'],
   mainNavSectors: ['#faq', '#dgtek', '#how-to-connect', '#plans', '#testimonials', '#footer'],
   top: {
-    header: 'Get Ultra-Fast Fibre To Your Home',
+    header: 'Get 1 Month Of Free 1000Mbps Fibre Internet In These 3 Prestigious Apartments',
     text: 'Pineapple Net’s full-fibre is the internet Melbourne’s been missing. Faster, cheaper and more reliable than your NBN. Now that it’s reached your building, connect and get your first month for FREE. Offer available in Melbourne’s CBD highrise apartments: The Aurora, Conversatory and QV1.',
     button: 'Get in Touch',
     goto: '#footer',
@@ -22,7 +22,7 @@ const state = {
     header: 'We Told You It Was Cheap'
   },
   list: {
-    header: 'Fibre Is The Superior Internet Technology',
+    header: 'Unlimited Internet Superior Technology',
     text: 'No data caps to stop you or congestion to slow you down! With fibre, you’ll download at breakneck speeds, stream in 4K without pause and experience crystal clear video calls with friends and family at home and abroad.',
     button: 'Get in Touch',
     goto: '#footer',
@@ -45,22 +45,22 @@ const state = {
     ]
   },
   howToConnect: {
-    header: 'What You Need To Know To Connect',
+    header: 'Everything You Need To Know To Connect',
     text: 'There are a couple of options and a 1 month free promo available to you when connecting to Pineapple Net’s residential fibre.',
-    button: 'Click Here to Get Your Promo Code',
+    button: 'Enquire Now',
     goto: '#footer',
     items: [
       {
         title: 'Flexible. No Contract',
-        text: 'Pay a $99 connection fee for your fibre and router, and we won’t ask you to sign anything. No contracts, just complete flexibility. You can upgrade or downgrade your service at any time and leave whenever you want.'
+        text: 'Pay a $99 connection fee for your fibre and router, and we won’t ask you to sign anything. Upgrade or downgrade at any time, or leave when you want.'
       },
       {
         title: '12 Month Contract',
-        text: 'Ready for a commitment? You can sign up to a 12-month contract and we’ll waive all the fees and connect you for free. Get a shiny new WiFi router optimised for fibre and keep the $99 in your pocket.'
+        text: 'Ready for a commitment? You can sign up to a 12-month contract and we’ll waive all the connection fees.'
       },
       {
         title: '1 Month Free Internet',
-        text: 'To sweeten the deal, we are giving all residents of the Aurora, Conservatory and QV1 buildings their first month for free. It’s just one less bill to worry about next month and a little token of our appreciation.'
+        text: 'To sweeten the deal, we are giving all residents of the Aurora, Conservatory and QV1 buildings their first month for free.'
       }
     ]
   },

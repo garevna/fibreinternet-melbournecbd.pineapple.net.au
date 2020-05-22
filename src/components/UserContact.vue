@@ -49,12 +49,7 @@
 
     <v-card-actions class="text-center">
       <v-btn
-          color="buttons"
           dark
-          rounded
-          min-width="300"
-          width="100%"
-          height="48"
           class="submit-button px-auto mx-auto"
           @click="sendUserRequest"
       >
