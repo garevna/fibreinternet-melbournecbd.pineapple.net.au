@@ -11,31 +11,19 @@
 
     <v-container fluid class="mt-5 mb-12">
       <v-card flat class="d-flex flex-wrap justify-center transparent">
-        <v-card flat class="card--offer transparent text-center mx-1 mx-sm-10" width="240">
-          <ContactUs :contact.sync="contact" />
+        <v-card
+              flat
+              class="card--offer transparent text-center mx-1 mx-sm-10"
+              width="240"
+              v-for="(item, index) in howToConnect.items"
+              :key="index"
+        >
+          <v-img :src="item.icon" />
           <v-card-title>
-            <h3>{{ howToConnect.items[0].title }}</h3>
+            <h3>{{ item.title }}</h3>
           </v-card-title>
           <v-card-text max-width="600" class="mx-auto">
-            <p>{{ howToConnect.items[0].text }}</p>
-          </v-card-text>
-        </v-card>
-        <v-card flat class="card--offer transparent text-center mx-1 mx-sm-10" width="240">
-          <GetConnected :contact.sync="contact" />
-          <v-card-title>
-            <h3>{{ howToConnect.items[1].title }}</h3>
-          </v-card-title>
-          <v-card-text>
-            <p>{{ howToConnect.items[1].text }}</p>
-          </v-card-text>
-        </v-card>
-        <v-card flat class="card--offer transparent text-center mx-1 mx-sm-10" width="240">
-          <Enjoy :contact.sync="contact" />
-          <v-card-title with="100%">
-            <h3>{{ howToConnect.items[2].title }}</h3>
-          </v-card-title>
-          <v-card-text>
-            <p>{{ howToConnect.items[2].text }}</p>
+            <p>{{ item.text }}</p>
           </v-card-text>
         </v-card>
       </v-card>
@@ -72,18 +60,9 @@ h3, p {
 
 import { mapState } from 'vuex'
 
-import ContactUs from '@/components/svg/ContactUs.vue'
-import GetConnected from '@/components/svg/GetConnected.vue'
-import Enjoy from '@/components/svg/Enjoy.vue'
-
 export default {
   name: 'HowToConnect',
   props: ['page'],
-  components: {
-    ContactUs,
-    GetConnected,
-    Enjoy
-  },
   data () {
     return {
       contact: false
