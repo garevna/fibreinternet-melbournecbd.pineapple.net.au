@@ -51,17 +51,17 @@ const state = {
     goto: '#footer',
     items: [
       {
-        icon: '/svg/icon-1.svg',
+        icon: 'svg/icon-1.svg',
         title: 'Flexible. No Contract',
         text: 'Pay a $99 connection fee for your fibre and router, and we won’t ask you to sign anything. Upgrade or downgrade at any time, or leave when you want.'
       },
       {
-        icon: '/svg/icon-2.svg',
+        icon: 'svg/icon-2.svg',
         title: '12 Month Contract',
         text: 'Ready for a commitment? You can sign up to a 12-month contract and we’ll waive all the connection fees.'
       },
       {
-        icon: '/svg/icon-3.svg',
+        icon: 'svg/icon-3.svg',
         title: '1 Month Free Internet',
         text: 'To sweeten the deal, we are giving all residents of the Aurora, Conservatory and QV1 buildings their first month for free.'
       }
