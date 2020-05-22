@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/fibreinternet-melbournecbd.pineapple.com.au/browserconfig.xml"
   },
   {
-    "revision": "52abff79444fa3bb83b0",
-    "url": "/fibreinternet-melbournecbd.pineapple.com.au/css/app.29ec7baa.css"
+    "revision": "244267a00700aa783812",
+    "url": "/fibreinternet-melbournecbd.pineapple.com.au/css/app.8ab34a20.css"
   },
   {
     "revision": "67d8ecd379af6835987c",
@@ -500,12 +500,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/fibreinternet-melbournecbd.pineapple.com.au/img/testimonials/default.png"
   },
   {
-    "revision": "f4c516c1db96a02d5d0dbccc85c12b7a",
+    "revision": "64e0912e0b2fe70911bad5003872a0a7",
     "url": "/fibreinternet-melbournecbd.pineapple.com.au/index.html"
   },
   {
-    "revision": "52abff79444fa3bb83b0",
-    "url": "/fibreinternet-melbournecbd.pineapple.com.au/js/app.7c09a090.js"
+    "revision": "244267a00700aa783812",
+    "url": "/fibreinternet-melbournecbd.pineapple.com.au/js/app.65def1b6.js"
   },
   {
     "revision": "67d8ecd379af6835987c",
@@ -530,6 +530,18 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "8633a26c079544a29df27aa1bb8b885b",
     "url": "/fibreinternet-melbournecbd.pineapple.com.au/site.webmanifest"
+  },
+  {
+    "revision": "404c2be166e41a7a1c74298dee0adefc",
+    "url": "/fibreinternet-melbournecbd.pineapple.com.au/svg/icon-1.svg"
+  },
+  {
+    "revision": "53cffc89fa00ed430da155b914a58e20",
+    "url": "/fibreinternet-melbournecbd.pineapple.com.au/svg/icon-2.svg"
+  },
+  {
+    "revision": "7880d15998568fbb73ec58fc9a7907c2",
+    "url": "/fibreinternet-melbournecbd.pineapple.com.au/svg/icon-3.svg"
   },
   {
     "revision": "f551c5cd06ff6c5b92d140b5e1db5ca2",
