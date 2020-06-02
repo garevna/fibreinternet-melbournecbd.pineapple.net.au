@@ -29,17 +29,17 @@ const state = {
     items: [
       {
         title: 'Lightspeed',
-        icon: 'https://garevna.github.io/connect-melbournecbd.pineapple.com.au/android-chrome-192x192.png',
+        icon: `${location.origin}${location.pathname}img/icons/android-chrome-192x192.png`,
         text: 'Fast in both directions. For downloads, we are 10-20x faster than an NBN connection. For uploads, there is no competition - up to 25x faster than the NBN’s fastest.'
       },
       {
         title: 'Bulletproof',
-        icon: 'https://garevna.github.io/connect-melbournecbd.pineapple.com.au/android-chrome-192x192.png',
+        icon: `${location.origin}${location.pathname}img/icons/android-chrome-192x192.png`,
         text: 'Fibre is reliable. It won’t let you down when you’re in a Zoom meeting with colleagues or a FaceTime with the family. Our 99.9% network uptime is without equal. That’s years without a single outage.'
       },
       {
         title: 'Affordable',
-        icon: 'https://garevna.github.io/connect-melbournecbd.pineapple.com.au/android-chrome-192x192.png',
+        icon: `${location.origin}${location.pathname}img/icons/android-chrome-192x192.png`,
         text: 'Fibre from $50 helps you tighten the belt without feeling the pinch. Not only does our superior fibre outperform the NBN,  for comparable speeds, but it is also cheaper. And for our gigabit speeds, it’s still a great deal.'
       }
     ]

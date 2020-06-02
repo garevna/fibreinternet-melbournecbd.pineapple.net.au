@@ -12,8 +12,8 @@
             <v-spacer></v-spacer>
             <v-btn
                   class="submit-button"
+                  dark
                   width="80"
-                  color="primary"
                   text @click="$emit('update:opened', false)"
             >
               CLOSE
@@ -28,6 +28,9 @@
 h2 {
   color: #4CAF50;
 }
+/* .submit-button {
+  color: #fff!important;
+} */
 </style>
 
 <script>

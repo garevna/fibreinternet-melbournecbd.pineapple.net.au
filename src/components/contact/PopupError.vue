@@ -12,7 +12,6 @@
             <v-spacer></v-spacer>
             <v-btn
                   class="submit-button"
-                  color="primary"
                   width="80"
                   text @click="$emit('update:opened', false)"
             >

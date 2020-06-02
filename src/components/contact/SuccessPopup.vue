@@ -61,72 +61,73 @@
   text-transform: none!important;
 }
 
-  .success-content-wide--close-button {
-    top: 29px;
-    right: 32px;
-  }
-  .success-content-shrink--close-button {
-    top: 10px;
-    right: 5px;
-    transform: scale(0.5, 0.5);
-  }
+.success-content-wide--close-button {
+  top: 29px;
+  right: 32px;
+  color: #fff!important;
+}
+.success-content-shrink--close-button {
+  top: 10px;
+  right: 5px;
+  transform: scale(0.5, 0.5);
+}
 
-  .success-content-wide--like {
-    top: 24px;
-    left: -18px;
-  }
-  .success-content-shrink--like {
-    top: 40px;
-    left: 0px;
-  }
+.success-content-wide--like {
+  top: 24px;
+  left: -18px;
+}
+.success-content-shrink--like {
+  top: 40px;
+  left: 0px;
+}
 
-  .success-content-wide--title {
-    left: 274px;
-    top: 73px;
-    font-size: 42px;
-    text-align: left;
-  }
-  .success-content-shrink--title {
-    left: 54px;
-    top: 200px;
-    width: 200px;
-    text-align: center;
-    font-size: 24px;
-  }
+.success-content-wide--title {
+  left: 274px;
+  top: 73px;
+  font-size: 42px;
+  text-align: left;
+}
+.success-content-shrink--title {
+  left: 54px;
+  top: 200px;
+  width: 200px;
+  text-align: center;
+  font-size: 24px;
+}
 
-  .success-content-wide--text {
-    left: 274px;
-    top: 141px;
-    width: 327px;
-    font-size: 24px;
-    text-align: left;
-  }
-  .success-content-shrink--text {
-    left: 23px;
-    top: 250px;
-    width: 250px;
-    text-align: center;
-    font-size: 18px;
-  }
+.success-content-wide--text {
+  left: 274px;
+  top: 141px;
+  width: 327px;
+  font-size: 24px;
+  text-align: left;
+}
+.success-content-shrink--text {
+  left: 23px;
+  top: 250px;
+  width: 250px;
+  text-align: center;
+  font-size: 18px;
+}
 
-  .success-content-button-wide--light {
-    top: 250px;
-    left: 274px;
-  }
-  .success-content-button-shrink--light {
-    top: 320px;
-    left: 54px;
-    font-size: 13px;
-  }
+.success-content-button-wide--light {
+  top: 250px;
+  left: 274px;
+}
+.success-content-button-shrink--light {
+  top: 320px;
+  left: 54px;
+  font-size: 13px;
+}
 
-  .success-content-button-wide--green {
-    top: 250px;
-    left: 476px;
-  }
-  .success-content-button-shrink--green {
-    top: 380px;
-    left: 48px;
-  }
+.success-content-button-wide--green {
+  top: 250px;
+  left: 476px;
+}
+.success-content-button-shrink--green {
+  top: 380px;
+  left: 48px;
+}
 </style>
 
 <script>
