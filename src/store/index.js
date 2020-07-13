@@ -7,7 +7,6 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     host: 'https://api.pineapple.net.au',
-    landhost: `${location.origin}${location.pathname}`,
     officeAddress: '75 Brighton Road, Elwood VIC 3184',
     officePhone: '1300 857 501',
     officeEmail: 'info@pineapple.net.au',
@@ -25,20 +24,10 @@ export default new Vuex.Store({
   modules,
 
   mutations: {
-    UPDATE_PAGES: (state, payload) => {
-      state.pages = payload.pages
-      state.selectors = payload.selectors
-    },
     CHANGE_VIEWPORT: (state) => {
-      state.viewport = window.innerWidth >= 1904 ? 'xl'
-        : window.innerWidth >= 1264 ? 'lg'
-          : window.innerWidth >= 960 ? 'md'
-            : window.innerWidth >= 600 ? 'sm' : 'xs'
       state.viewportWidth = window.innerWidth
       state.viewportHeight = window.innerHeight
     },
-    CHANGE_VIEWPORT_WIDTH: (state, width) => { state.viewportWidth = width },
-    CHANGE_VIEWPORT_HEIGHT: (state, height) => { state.viewportHeight = height },
 
     CHANGE_PLAN: (state, plan) => { state.plan = plan },
     SET_PROPERTY: (state, payload) => {
