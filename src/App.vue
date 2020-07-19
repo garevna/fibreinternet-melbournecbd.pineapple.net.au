@@ -1,62 +1,58 @@
 <template>
   <v-app class="homefone">
-    <v-container fluid class="homefone" v-if="ready">
+    <v-container fluid class="homefone" v-if="ready" v-mutate="mutationHandler">
       <SystemBar />
       <MainNavBar :page.sync="page" />
-      <!-- <v-sheet
-        width="100%"
-        max-width="1440"
-        color="homefone"
-        tile
-        class="mx-auto"
-      > -->
-        <section id="top" style="width: 100%">
+
+      <v-row width="100%" justify="center">
+        <section id="top" class="section">
           <div class="base-title">
             <a href="#top" class="core-goto"></a>
             <Top :page.sync="page" />
           </div>
         </section>
 
-      <!-- </v-sheet> -->
+      </v-row>
 
       <!-- ============================= LIST ============================= -->
-
-      <section id="list" style="width: 100%">
-        <div class="base-title">
-          <a href="#list" class="core-goto"></a>
-          <List :page.sync="page" />
-        </div>
-      </section>
-
+      <v-row width="100%" justify="center">
+        <section id="list" class="section">
+          <div class="base-title">
+            <a href="#list" class="core-goto"></a>
+            <List :page.sync="page" />
+          </div>
+        </section>
+      </v-row>
       <!-- ============================= CREEN SECTION ============================= -->
-      <section id="dgtek" style="width: 100%">
-        <div class="base-title">
-          <a href="#dgtek" class="core-goto"></a>
-          <GreenSection />
-        </div>
-      </section>
-
+      <v-row width="100%" justify="center">
+        <section id="dgtek" class="section">
+          <div class="base-title">
+            <a href="#dgtek" class="core-goto"></a>
+            <GreenSection />
+          </div>
+        </section>
+      </v-row>
       <!-- ============================= HOW TO CONNECT ============================= -->
-
-      <section id="how-to-connect" style="width: 100%">
-        <div class="base-title">
-          <a href="#how-to-connect" class="core-goto"></a>
-          <HowToConnect :page.sync="page" />
-        </div>
-      </section>
-
+      <v-row width="100%" justify="center">
+        <section id="how-to-connect" class="section">
+          <div class="base-title">
+            <a href="#how-to-connect" class="core-goto"></a>
+            <HowToConnect :page.sync="page" />
+          </div>
+        </section>
+      </v-row>
       <!-- ============================= TESTIMONIALS ============================= -->
-
-      <section id="testimonials" style="width: 100%">
-        <div class="base-title">
-          <a href="#testimonials" class="core-goto"></a>
-          <Testimonials :page.sync="page"/>
-        </div>
-      </section>
-
+      <v-row width="100%" justify="center">
+        <section id="testimonials" class="section">
+          <div class="base-title">
+            <a href="#testimonials" class="core-goto"></a>
+            <Testimonials :page.sync="page"/>
+          </div>
+        </section>
+      </v-row>
       <!-- ============================= INTERNET PLANS ============================= -->
       <v-row width="100%" justify="center">
-        <section id="plans">
+        <section id="plans" class="section">
           <div class="base-title">
             <a href="#plans" class="core-goto"></a>
             <InternetPlans :page.sync="page"/>
@@ -64,8 +60,8 @@
         </section>
       </v-row>
       <!-- ============================= FAQ ============================= -->
-      <v-row width="100%">
-        <section id="faq" style="width: 100%">
+      <v-row width="100%" justify="center">
+        <section id="faq" class="section">
           <div class="base-title">
             <a href="#faq" class="core-goto"></a>
             <FAQ :page.sync="page"/>
@@ -73,17 +69,27 @@
         </section>
       </v-row>
       <!-- ============================= FOOTER ============================= -->
-      <section id="footer" class="homefone">
+      <section id="footer" width="100%" class="homefone">
         <div class="base-title">
           <a href="#footer" class="core-goto"></a>
             <v-row width="100%">
-              <Footer :emailEndpoint="mailEndpoint" />
+              <Footer :emailEndpoint="mailEndpoint" v-mutate="footerMutationHandler" />
             </v-row>
         </div>
       </section>
     </v-container>
   </v-app>
 </template>
+
+<style>
+  .section {
+    width: 100%;
+    max-width: 1440px;
+  }
+  body {
+    overflow: hidden;
+  }
+</style>
 
 <script>
 
@@ -147,8 +153,8 @@ export default {
     }
   },
   computed: {
-    ...mapState(['viewport', 'viewportWidth', 'pages', 'selectors']),
-    ...mapState('contact', ['mailEndpoint', 'emailSubject', 'emailText'])
+    ...mapState(['viewportWidth', 'mailEndpoint', 'emailSubject', 'emailText', 'mainContentHeight', 'footerHeight']),
+    ...mapState('content', ['userForm', 'top'])
   },
   watch: {
     page (val) {
@@ -162,18 +168,31 @@ export default {
     }
   },
   methods: {
+    ...mapActions({
+      getGeneralInfo: 'GET_GENERAL_INFO'
+    }),
     ...mapActions('content', {
-      getContent: 'GET_CONTENT'
+      getPageContent: 'GET_PAGE_CONTENT'
     }),
     onResize () {
       this.$store.commit('CHANGE_VIEWPORT')
+    },
+    mutationHandler (mutations) {
+      this.$store.commit('UPDATE_MAIN_CONTENT_HEIGHT', this.$el.offsetHeight)
+      document.body.style.height = this.mainContentHeight + this.footerHeight - 36 + 'px'
+    },
+    footerMutationHandler (mutations) {
+      const footer = document.querySelector('.footer')
+      this.$store.commit('UPDATE_FOOTER_HEIGHT', footer.offsetHeight)
+      document.body.style.height = this.mainContentHeight + this.footerHeight - 36 + 'px'
     }
   },
   beforeMount () {
-    this.getContent()
+    this.getGeneralInfo()
+    this.getPageContent(3)
       .then((response) => {
-        this.ready = !!response
         document.title = response
+        this.ready = true
       })
   },
   mounted () {
