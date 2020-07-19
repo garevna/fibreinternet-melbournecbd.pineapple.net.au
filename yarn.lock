@@ -7856,7 +7856,7 @@ pineapple-faq@^1.0.0:
     vuetify "^2.2.11"
     vuex "^3.4.0"
 
-pineapple-footer@^2.1.4, pineapple-footer@^2.1.7:
+pineapple-footer@^2.1.4:
   version "2.1.7"
   resolved "https://registry.yarnpkg.com/pineapple-footer/-/pineapple-footer-2.1.7.tgz#805651e3045401c83d57629a1236a44aacd77f60"
   integrity sha512-YH79mTIqmyle93QiasNBQf8+peSH5XCNTSsSD4XRQc7dRs+Uqn6kUPhv5mBw+5p23vk/EHtA5o9TxuRvWJmlNA==
@@ -7864,6 +7864,19 @@ pineapple-footer@^2.1.4, pineapple-footer@^2.1.7:
     core-js "^3.6.5"
     pineapple-popup "^1.0.7"
     pineapple-styles "^1.1.7"
+    vue "^2.6.11"
+    vue-router "^3.3.4"
+    vuetify "^2.2.11"
+    vuex "^3.4.0"
+
+pineapple-footer@^2.2.5:
+  version "2.2.5"
+  resolved "https://registry.yarnpkg.com/pineapple-footer/-/pineapple-footer-2.2.5.tgz#ddd654cfd3045630899f9bdaf15c3ef648959eed"
+  integrity sha512-EIcFjE1w6se9UtlcKH+PIL8uSxDMbkhh/l2TKBo1TvN4pZeouFzv7JWKBJBPSVD2Yx0aBbNCNw/LlLSxWX2RGw==
+  dependencies:
+    core-js "^3.6.5"
+    pineapple-popup "^1.0.7"
+    pineapple-styles "^1.1.9"
     vue "^2.6.11"
     vue-router "^3.3.4"
     vuetify "^2.2.11"
@@ -7927,6 +7940,15 @@ pineapple-styles@^1.1.5, pineapple-styles@^1.1.7, pineapple-styles@^1.1.8:
   version "1.1.8"
   resolved "https://registry.yarnpkg.com/pineapple-styles/-/pineapple-styles-1.1.8.tgz#b0a5d78b5f3aa541a0af62147556ff3193f8c978"
   integrity sha512-gEKn09d5o8C5UQIxsjLN7aIsNa4iXIjH3bBUwJUpHfNDTy/WiaHBBUncqX1kcWqH4N4mG5Rp4fBWWexP5SCWtA==
+  dependencies:
+    core-js "^3.6.5"
+    vue "^2.6.11"
+    vuetify "^2.2.11"
+
+pineapple-styles@^1.1.9:
+  version "1.1.9"
+  resolved "https://registry.yarnpkg.com/pineapple-styles/-/pineapple-styles-1.1.9.tgz#b063c6866a201c98795bb0ee1fb46341c4b0e02a"
+  integrity sha512-HxAUGdl/+QYDN3f8YK+TcvdczSZCyJ4wUmeskRXyomhzSLZfNJO6vcvwcsKnyQmbImKUgv4BXwZW/cgda+yRdA==
   dependencies:
     core-js "^3.6.5"
     vue "^2.6.11"

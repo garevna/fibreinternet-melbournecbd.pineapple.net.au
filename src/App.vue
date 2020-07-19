@@ -2,6 +2,7 @@
   <v-app class="homefone">
     <v-container fluid class="homefone" v-if="ready" v-mutate="mutationHandler">
       <SystemBar />
+
       <MainNavBar :page.sync="page" />
 
       <v-row width="100%" justify="center">
@@ -11,7 +12,6 @@
             <Top :page.sync="page" />
           </div>
         </section>
-
       </v-row>
 
       <!-- ============================= LIST ============================= -->
@@ -24,7 +24,7 @@
         </section>
       </v-row>
       <!-- ============================= CREEN SECTION ============================= -->
-      <v-row width="100%" justify="center">
+      <v-row width="100%" justify="center" class="deepgreen">
         <section id="dgtek" class="section">
           <div class="base-title">
             <a href="#dgtek" class="core-goto"></a>
@@ -73,7 +73,10 @@
         <div class="base-title">
           <a href="#footer" class="core-goto"></a>
             <v-row width="100%">
-              <Footer :emailEndpoint="mailEndpoint" v-mutate="footerMutationHandler" />
+              <Footer
+                  :emailEndpoint="mailEndpoint"
+                  style="position: absolute; bottom: 0"
+              />
             </v-row>
         </div>
       </section>
@@ -87,7 +90,10 @@
     max-width: 1440px;
   }
   body {
-    overflow: hidden;
+    overflow: hidden!important;
+  }
+  .footer {
+    height: fit-content!important;
   }
 </style>
 
@@ -144,27 +150,29 @@ export default {
     return {
       ready: false,
       page: null,
-      user: {
-        name: '',
-        email: '',
-        phone: ''
-      },
-      plans: false
+      plans: false,
+      mainContentHeight: 0
     }
   },
   computed: {
-    ...mapState(['viewportWidth', 'mailEndpoint', 'emailSubject', 'emailText', 'mainContentHeight', 'footerHeight']),
-    ...mapState('content', ['userForm', 'top'])
+    ...mapState(['viewportWidth', 'mailEndpoint', 'emailSubject', 'emailText', 'footerHeight']),
+    ...mapState('content', ['userForm', 'top', 'footer'])
   },
   watch: {
     page (val) {
       if (!val) return
       this.$vuetify.goTo(val, {
         duration: 500,
-        offset: 20,
+        offset: 0,
         easing: 'easeInOutCubic'
       })
       this.page = undefined
+    },
+    mainContentHeight (val) {
+      document.body.style.height = val + this.footerHeight + 'px'
+    },
+    footerHeight (val) {
+      document.body.style.height = this.mainContentHeight + val + 'px'
     }
   },
   methods: {
@@ -174,17 +182,12 @@ export default {
     ...mapActions('content', {
       getPageContent: 'GET_PAGE_CONTENT'
     }),
+    mutationHandler (mutations) {
+      this.mainContentHeight = this.$el.offsetHeight
+    },
     onResize () {
       this.$store.commit('CHANGE_VIEWPORT')
-    },
-    mutationHandler (mutations) {
-      this.$store.commit('UPDATE_MAIN_CONTENT_HEIGHT', this.$el.offsetHeight)
-      document.body.style.height = this.mainContentHeight + this.footerHeight - 36 + 'px'
-    },
-    footerMutationHandler (mutations) {
-      const footer = document.querySelector('.footer')
-      this.$store.commit('UPDATE_FOOTER_HEIGHT', footer.offsetHeight)
-      document.body.style.height = this.mainContentHeight + this.footerHeight - 36 + 'px'
+      document.body.style.height = this.mainContentHeight + this.footerHeight + 'px'
     }
   },
   beforeMount () {

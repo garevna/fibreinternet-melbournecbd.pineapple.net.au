@@ -33,6 +33,7 @@ export default new Vuex.Store({
     CHANGE_VIEWPORT: (state) => {
       state.viewportWidth = window.innerWidth
       state.viewportHeight = window.innerHeight
+      return state.mainContentHeight + state.footerHeight + 'px'
     },
     CHANGE_PLAN: (state, plan) => { state.plan = plan },
 
