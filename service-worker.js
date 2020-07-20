@@ -14,10 +14,10 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/fibreinternet-melbournecbd.pineapple.com.au/precache-manifest.5269042e089e3862b9580e0132149d28.js"
+  "/connect-melbournecbd.pineapple.net.au/precache-manifest.c6d384aa43f12420a3e4d0da9e58a68f.js"
 );
 
-workbox.core.setCacheNameDetails({prefix: "fibreinternet-melbournecbd.pineapple.com.au"});
+workbox.core.setCacheNameDetails({prefix: "fibreinternet-melbournecbd.pineapple.net.au"});
 
 self.addEventListener('message', (event) => {
   if (event.data && event.data.type === 'SKIP_WAITING') {
