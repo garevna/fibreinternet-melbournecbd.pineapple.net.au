@@ -19,6 +19,6 @@ module.exports = {
   },
   runtimeCompiler: true,
   publicPath: process.env.NODE_ENV === 'production'
-    ? '/connect-melbournecbd.pineapple.net.au/'
+    ? '/fibreinternet-melbournecbd.pineapple.net.au/'
     : '/'
 }
