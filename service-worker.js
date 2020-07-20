@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/connect-melbournecbd.pineapple.net.au/precache-manifest.c6d384aa43f12420a3e4d0da9e58a68f.js"
+  "/fibreinternet-melbournecbd.pineapple.net.au/precache-manifest.4d180dccbe05e57e9a88d1691677ffc1.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "fibreinternet-melbournecbd.pineapple.net.au"});
