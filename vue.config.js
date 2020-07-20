@@ -17,5 +17,8 @@ module.exports = {
     themeColor: '#20731C',
     msTileColor: '#FAFAFA'
   },
-  runtimeCompiler: true
+  runtimeCompiler: true,
+  publicPath: process.env.NODE_ENV === 'production'
+    ? '/connect-melbournecbd.pineapple.net.au/'
+    : '/'
 }

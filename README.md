@@ -2,6 +2,8 @@
 
 ###### Landing page for pineapple.net.au
 
+[**demo**](https://garevna.github.io/fibreinternet-melbournecbd.pineapple.net.au)
+
 ### Project setup
 ```
 yarn install
